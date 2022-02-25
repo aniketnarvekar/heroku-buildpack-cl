@@ -76,10 +76,8 @@ export CACHE_DIR
 export BUILD_DIR
 export CCL_DEFAULT_DIRECTORY=$CCL_DIR
 
-ls $CCL_DEFAULT_DIRECTORY
-
 echo "-----> Starting build"
-$CCL_DEFAULT_DIRECTORY/dx86cl64 -l "$BUILDPACK_DIR/setup/compile.lisp"
+$CCL_DEFAULT_DIRECTORY/lx86cl64 -l "$BUILDPACK_DIR/setup/compile.lisp"
 echo "-----> Build finished"
 
 chmod a+x $BUILD_DIR/lispapp
