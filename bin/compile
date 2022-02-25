@@ -16,8 +16,8 @@ function indent() {
 }
 
 # 
-S3_BUCKET="cl-heroku"
-CCL_PACKAGE="http://${S3_BUCKET}.s3.amazonaws.com/ccl-1.7.tgz"
+# S3_BUCKET="cl-heroku"
+CCL_PACKAGE="https://github.com/Clozure/ccl/releases/download/v1.12/ccl-1.12-linuxx86.tar.gz"
 
 # parse and derive params
 BUILDPACK_DIR=$(cd $(dirname $0); cd ..; pwd) # absolute path of buildpack
