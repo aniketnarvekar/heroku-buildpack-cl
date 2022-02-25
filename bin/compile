@@ -16,8 +16,8 @@ function indent() {
 }
 
 # 
-# S3_BUCKET="cl-heroku"
-CCL_PACKAGE="https://github.com/Clozure/ccl/releases/download/v1.12/ccl-1.12-linuxx86.tar.gz"
+S3_BUCKET="cl-heroku"
+CCL_PACKAGE="http://${S3_BUCKET}.s3.amazonaws.com/ccl-1.7.tgz"
 
 # parse and derive params
 BUILDPACK_DIR=$(cd $(dirname $0); cd ..; pwd) # absolute path of buildpack
@@ -76,7 +76,7 @@ export CACHE_DIR
 export BUILD_DIR
 export CCL_DEFAULT_DIRECTORY=$CCL_DIR
 
-# $CCL_DEFAULT_DIRECTORY --version
+# $CCL_DEFAULT_DIRECTORY/lx86cl64 --version
 
 echo "-----> Starting build"
 $CCL_DEFAULT_DIRECTORY/lx86cl64 -l "$BUILDPACK_DIR/setup/compile.lisp"
