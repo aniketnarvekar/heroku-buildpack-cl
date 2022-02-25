@@ -82,5 +82,7 @@ echo "-----> Starting build"
 $CCL_DEFAULT_DIRECTORY/lx86cl64 -l "$BUILDPACK_DIR/setup/compile.lisp"
 echo "-----> Build finished"
 
+export $CCL_DEFAULT_DIRECTORY/lx86cl64
+
 chmod a+x $BUILD_DIR/lispapp
 
