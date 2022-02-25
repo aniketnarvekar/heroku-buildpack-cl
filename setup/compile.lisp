@@ -42,7 +42,7 @@
     (format t "Listening on port ~A~%" port)
     (funcall (symbol-function (find-symbol "START" (find-package "NET.ASERVE")))
 	     :port port)
-    (loop (sleep 60))			;sleep forever
+    ;; (loop (sleep 60))			;sleep forever
     ))
 
 ;;; Load the application from sources
