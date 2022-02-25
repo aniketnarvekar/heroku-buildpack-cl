@@ -36,7 +36,7 @@ CCL_DIR="$CACHE_DIR/ccl"
 echo "-----> Installing ccl"
 if [ ! -d $CCL_DIR ]; then
     echo "-----> Fetching ccl"
-    cur -L -O $CCL_PACKAGE | tar xf ccl-1.12-linuxx86.tar.gz
+    curl -L -O $CCL_PACKAGE | tar xf ccl-1.12-linuxx86.tar.gz
     # mkdir -p $CCL_DIR  && curl $CCL_PACKAGE -s -o -  | tar -xvzf $CCL_DIR
 fi
 
