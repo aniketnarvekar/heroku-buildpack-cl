@@ -16,7 +16,7 @@ function indent() {
 }
 
 # 
-S3_BUCKET="cl-heroku"
+# S3_BUCKET="cl-heroku"
 CCL_PACKAGE="https://github.com/Clozure/ccl/releases/download/v1.12/ccl-1.12-linuxx86.tar.gz"
 
 # parse and derive params
@@ -36,8 +36,7 @@ CCL_DIR="$CACHE_DIR/ccl"
 echo "-----> Installing ccl"
 if [ ! -d $CCL_DIR ]; then
     echo "-----> Fetching ccl"
-    curl -L -O $CCL_PACKAGE | tar xf ccl-1.12-linuxx86.tar.gz
-    # mkdir -p $CCL_DIR  && curl $CCL_PACKAGE -s -o -  | tar -xvzf $CCL_DIR
+    mkdir -p $CCL_DIR  && curl $CCL_PACKAGE -s -o -  | tar xzf - -C $CCL_DIR
 fi
 
 # add to slug 
@@ -77,7 +76,7 @@ export CACHE_DIR
 export BUILD_DIR
 export CCL_DEFAULT_DIRECTORY=$CCL_DIR
 
-$CCL_DEFAULT_DIRECTORY/lx86cl64 --version
+# $CCL_DEFAULT_DIRECTORY --version
 
 echo "-----> Starting build"
 $CCL_DEFAULT_DIRECTORY/lx86cl64 -l "$BUILDPACK_DIR/setup/compile.lisp"
